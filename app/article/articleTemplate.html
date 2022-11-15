@@ -8,16 +8,16 @@
             </div>
             <div class="col-content article">
                 <div class="abstract">
-                        <img ng-src="{{vm.news.image}}" />
+                        <img ng-src="{{vm.news.images}}" />
                     <p class="from-justify pull-left">
-                        {{vm.news.quote}}
+                        {{vm.news.headline}}
                     </p>
                    
                 </div>
                 <div class="clear"></div>
                 <div class="sub-title">
                     <span>
-                        {{vm.news.quote}}
+                        {{vm.news.section}}
                     </span>
                 </div>
                 <div class="clear"></div>
@@ -28,7 +28,7 @@
                     letter-spacing: 0.4px;
                     font-family: unset;
                     color: #2b2b2b;" id="matn" > 
-                        {{vm.news.text}}
+                        {{vm.news.body}}
                     </p>
                 </div>
                 <div class="name-entity">
@@ -36,7 +36,7 @@
                         موجودیت های نامدار
                     </div>
                     <p>
-                        {{vm.news.entityValue}}
+                        
                         <ul>
                                 <li  id="nerList"> </li>
                             <!-- <li ng-repeat="item in vm.Ner"><button style="color: blue;padding: 5px; width: 100%; font-family: 'b Yekan';" ng-click="vm.loadEntity(item.id)" ng->{{item}}</button></li> -->
@@ -48,7 +48,7 @@
                         روایات
                     </div>
                     <p>
-                        {{vm.news.quote}}
+                        
                         <ul>
                                 <li  id="qouteList"> </li>
                             <!-- <li ng-repeat="item in vm.Ner"><button style="color: blue;padding: 5px; width: 100%; font-family: 'b Yekan';" ng-click="vm.loadEntity(item.id)" ng->{{item}}</button></li> -->
@@ -70,7 +70,7 @@
                         <table>
                         <tr >
                             <th>دسته بندی:</th>
-                            <th>{{vm.news.category}}</th>
+                            <th>{{vm.news.section}}</th>
                         </tr>
                         <tr >
                             <th>خبرگزاری:</th>
@@ -78,7 +78,7 @@
                         </tr>
                         <tr >
                             <th>لینک خبر:</th>
-                            <th><a href="{{vm.news.link}}">...{{vm.news.link.substring(0, 15);}}</a></th>
+                            <th><a href="{{vm.news.url}}">...{{vm.news.url.substring(0, 15);}}</a></th>
                         </tr>
                     </table>
                 </div>
@@ -92,7 +92,7 @@
                             line-height: 18px;
                             letter-spacing: 0.4px;
                             font-family: unset;
-                            color: #2b2b2b;">{{vm.news.entityKey}}</th>
+                            color: #2b2b2b;">{{vm.KeyPhrease}}</th>
                         </tr>
                     </table>
                 </div>

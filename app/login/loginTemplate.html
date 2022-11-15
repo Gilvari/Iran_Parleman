@@ -2,30 +2,27 @@
 
     <div style="
     width: 100%;
-    padding: 47px;
+    padding: 10px;
     height: 100%;
     left: 0px;
-    background-image: url('/images/134.jpg');
+    background-image: url('/images/3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     top: 0px;
-    direction: ltr;
 ">
 <div style="
-background-color: rgba(0, 0, 0, 0.329);
-width: 100%;
-border-radius: 50px;
+background-color: rgba(0, 0, 0, 0.72);
 ">
-    <div style="opacity: 0.8; " class="col-6 login-form" >
-        <img src="../images/IRparlemanLOGO.png">
+    <div style="opacity: 0.8;" class="col-6 login-form">
+        <img src="../images/IRILOGO.png">
         <form ng-submit="vm.login()">
             <!-- <label for="uname"><b>نام کاربری</b></label> -->
-            <input style="text-align:center; border-radius: 5px;" type="text" placeholder="نام کاربری" name="username" required ng-model="vm.username">
+            <input type="text" placeholder="Enter Username" name="username" required ng-model="vm.username">
 
             <!-- <label for="psw"><b>پسورد</b></label> -->
-            <input style="text-align:center;  border-radius: 5px;" type="password" placeholder="گذرواژه" name="password" required ng-model="vm.password">
+            <input type="password" placeholder="Enter Password" name="password" required ng-model="vm.password">
 
-            <button style="width: 50%; margin: 8px 24%; background-color: #f7bec7;  border-radius: 5px;" class="login-button" type="submit">ورود</button>
+            <button style="width: 50%; margin: 8px 24%;" class="login-button" type="submit">ورود</button>
         </form>
     </div>
 </div>

@@ -83,7 +83,7 @@ let controllerFunction = ['$scope', '$timeout', '$state', 'dataService', functio
             field: "topic",
             title: "عنوان",
             width: 600
-        },{
+        }, { width: 1},{
             field: "publishDate",
             title: "تاریخ",
             width: 130
@@ -97,8 +97,7 @@ let controllerFunction = ['$scope', '$timeout', '$state', 'dataService', functio
             title: "خبرگزاری",
             width: 200
         }],
-        height: 400,
-        // width: 200,
+        height: 478,
         
         sortable: false,
         filterable: false,

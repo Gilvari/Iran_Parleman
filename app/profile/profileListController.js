@@ -18,8 +18,8 @@ let controllerFunction = ['$scope', '$timeout', '$state', '$stateParams', 'dataS
     vm.dropDownOptions = {
         dataSource: [],
         optionLabel: 'انتخاب کنید...',
-        dataTextField: "text",
-        dataValueField: "text"
+        dataTextField: "value",
+        dataValueField: "value"
     };
     function getProfileList() {
         dataService.getProfileList().then(function (result) {
@@ -27,9 +27,13 @@ let controllerFunction = ['$scope', '$timeout', '$state', '$stateParams', 'dataS
                 $scope.$apply(function () {
                     var select = $("#profile-dropdown").data("kendoDropDownList");
                     var text = result.data;
-       
- 
-                    select.dataSource.data(text);
+                    var res = new Array();
+                    text.map(function(value){
+res.push({
+    "value":value
+});
+                    });
+                    select.dataSource.data(res);
                 });
             });
         }, function (error) {
@@ -194,7 +198,7 @@ let controllerFunction = ['$scope', '$timeout', '$state', '$stateParams', 'dataS
             dataService.getQuoteData(vm.searchKeyword).then(function (result) {
                 $timeout(function () {
                     $scope.$apply(function () {
-                        vm.profileData  = result.data;
+                        vm.profileData.quote  = result.data;
                         // angular.copy(result.data, vm.profileData.quote );
                        
                        

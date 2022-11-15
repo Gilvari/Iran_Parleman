@@ -61,11 +61,6 @@ let routeConfig = function routing($stateProvider, $urlRouterProvider) {
 			templateUrl: "./app/support/supportTemplate.html",
 			parent: "shell"
 		})
-		.state('modir', {
-			url: "modir",
-			templateUrl: "./app/modir/modirTemplate.html",
-			parent: "shell"
-		})
 
 
 };

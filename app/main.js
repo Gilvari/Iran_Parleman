@@ -23,8 +23,6 @@ import {BuletinController} from './buletin/buletinController'
 import {SettingController} from './setting/settingController'
 import {SupportController} from './support/supportController'
 import {LoginController} from './login/loginController';
-import {modirController} from './modir/modirController';
-
 
 
 
@@ -86,7 +84,6 @@ var app = angular.module('jahadNews',
 	.controller('settingController', SettingController)
 	.controller('supportController', SupportController)
 	.controller('loginController', LoginController)
-	.controller('modirController', modirController)
 
 
 

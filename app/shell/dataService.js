@@ -51,9 +51,6 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
             }
             $http(req)
                 .then(function (result) {
-                    // console.log(sessionStorage.userService = angular.toJson(result.data.api_token));
-                    sessionStorage.userService = angular.toJson(result.data.api_token);
-                    
                     username = user;
                     defer.resolve(result);
                 }, function (error) {
@@ -76,7 +73,7 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'POST',
+                method: 'GET',
                 url: apis.newsInformation,
                 headers: {
 
@@ -86,7 +83,6 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
             };
             $http(req)
                 .then(function (result) {
-                    console.log(result.data);
                     defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
@@ -102,7 +98,7 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'GET',
+                method: 'POST',
                 url: apis.getCloudWord,
                 headers: {
 
@@ -139,12 +135,10 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
                 },
                 params: {
                     //test: 'test'
-                    //x:angular.fromJson(sessionStorage.userService).data.token
                 }
             }
             $http(req)
                 .then(function (result) {
-                    console.log(result.data);
                     defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
@@ -171,7 +165,6 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
             }
             $http(req)
                 .then(function (result) {
-                    console.log(result.data);
                     defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
@@ -192,21 +185,18 @@ let serviceFunction = ['$http', '$q', function ($http, $q) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'POST',
+                method: 'GET',
                 url: apis.getArticleData ,
                 headers: {
                     
                 },
                 params: {
-                    "news_id": id
+                    "id": id
                 }
             }
             $http(req)
                 .then(function (result) {
-                //    console.log(result.data.similar); //newsSingle
-                //    console.log(result.data.newsSingle[0]);
-                //    console.log(result.data.similar[0]);
-                    defer.resolve(result.data);
+                    defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
                 });
@@ -246,7 +236,7 @@ function getArticleNer(id) {
     var defer = $q.defer();
     try {
         var req = {
-            method: 'POST',
+            method: 'GET',
             url: apis.getNerData ,
             headers: {
                 
@@ -382,7 +372,7 @@ function getArticleSimilar(id) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'POST',
+                method: 'GET',
                 url:  apis.getProfileList ,
                 headers: {
 
@@ -416,7 +406,6 @@ function getArticleSimilar(id) {
             }
             $http(req)
                 .then(function (result) {
-                    console.log(result);
                     defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
@@ -431,7 +420,7 @@ function getArticleSimilar(id) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'GET',
+                method: 'POST',
                 url: apis.getQuoteData ,
                 headers: {
 
@@ -442,7 +431,6 @@ function getArticleSimilar(id) {
             }
             $http(req)
                 .then(function (result) {
-                    console.log(result.data);
                     defer.resolve(result);
                 }, function (error) {
                     defer.reject(error);
@@ -510,7 +498,7 @@ function getArticleSimilar(id) {
         var defer = $q.defer();
         try {
             var req = {
-                method: 'POST',
+                method: 'GET',
                 url: apis.search ,
                 headers: {
 

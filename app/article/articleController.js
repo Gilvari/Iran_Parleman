@@ -24,8 +24,7 @@ let controllerFunction = ['$scope', '$state', '$timeout', '$stateParams', 'dataS
         dataService.getArticleData(id).then(function (result) {
             $timeout(function(){
                 $scope.$apply(function(){
-                    console.log("gooz",result.newsSingle[0]);
-                     vm.news = angular.copy(result.newsSingle[0]);
+                     vm.news = angular.copy(result.data);
                      getSimilarData(vm.news.cluster);
                 });
             }, 500);
