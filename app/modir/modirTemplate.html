@@ -1,0 +1,120 @@
+<div class="row" ng-controller="dashboardController as vm">
+    <div class="spinner" ng-show="loading"><img src="http://i49.tinypic.com/j5z8mb.gif" alt="Yükleniyor..." /></div>
+
+
+
+    <div class="col-12" style=" margin-top: 15px; margin-right: 11px;">
+        
+
+
+        <div class="row" style="margin-right: -35px;">
+          <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card bg-gradient-primary text-white text-center card-shadow-primary">
+              <div class="card-body">
+                <h6 class="font-weight-normal">تعداد کل کاربران</h6>
+                <h2 class="mb-0">28893</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card bg-gradient-danger text-white text-center card-shadow-danger">
+              <div class="card-body">
+                <h6 class="font-weight-normal">تعداد کاربران فعال</h6>
+                <h2 class="mb-0">28893</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card bg-gradient-warning text-white text-center card-shadow-warning">
+              <div class="card-body">
+                <h6 class="font-weight-normal">تعداد کاربران غیر فعال</h6>
+                <h2 class="mb-0">28893</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 grid-margin stretch-card">
+            <div class="card bg-gradient-info text-white text-center card-shadow-info">
+              <div class="card-body">
+                <h6 class="font-weight-normal">تعداد مدیران</h6>
+                <h2 class="mb-0">28893</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+   
+    <div class="col-12 " style="padding-right: 30px; padding-left: 26px;">
+        <!-- <div class="container"> -->
+            <kendo-grid  id="recent-news" class="k-rtl " options="vm.mainGridOptions"></kendo-grid>
+        <!-- </div> -->
+    </div>
+    
+    <div class="col-12" style="margin-right: 15px; padding-left: 40px;" >
+            <div kendo-tab-strip k-options="vm.tabOptions">
+                
+                <ul>
+                    <li class="k-state-active">روز اخیر</li>
+                    <li>هفته اخیر</li>
+                    <li>ماه اخیر</li>
+                </ul>
+
+                <div class="col-12" style="padding: 1em; width: 96%;">
+                    <div class="col-6" style="width: 96%;">
+                        <tag-cloud words="todayWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                    
+                    <div class="col-5">
+                        
+                        <div id="today-topics"></div>
+                    </div>
+                </div>
+                <div class="col-12" style="padding: 1em; width: 96%;">
+                    <div class="col-6"  style="width: 96%;">
+                        <tag-cloud words="weekWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                   
+                    <div class="col-5">
+                        
+                        <div id="week-topics"></div>
+                    </div>
+
+                </div>
+                <div class="col-12" style="padding: 1em;     width: 96%;">
+                    <div class="col-6"  style="width: 96%;">
+                        <tag-cloud words="monthWords" style="width: 80%; height: 402px;" auto-resize="true" delay="15"
+                            steps="7" font-size="{from:0.12, to:0.04}"></tag-cloud>
+                    </div>                   
+                    <div class="col-5">
+                        <div id="month-topics"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="overflow-y: scroll; height:400px;" class="col-12">
+        <div class="container inline-division">
+            <div class="card" ng-repeat="item in listNews">
+                <img src="/images/logo/{{item.source}}.png" />
+                <div class="content">
+                    <span class="title">
+                        <a href="#">{{item.topic}}</a>
+                    </span>
+                    <span class="resource">
+                        {{item.agency}}
+                    </span>
+                    <span class="abstract">
+                        {{item.body}}
+                    </span>
+                    <span class="date">
+                        {{item.formattedPublishDateTime}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
